@@ -60,11 +60,7 @@ pyinstaller==6.16.0
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/Template-Tkinter-Python`](https://www.diegolibonati.com.ar/#/project/Template-Tkinter-Python)
-
-## Video
-
-https://user-images.githubusercontent.com/99032604/199149396-0e2f1703-c84e-4278-ac90-e806f0aba018.mp4
+[`https://www.diegolibonati.com.ar/#/project/Template-Tkinter-Program`](https://www.diegolibonati.com.ar/#/project/Template-Tkinter-Program)
 
 ## Testing
 
