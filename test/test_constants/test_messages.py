@@ -1,14 +1,14 @@
 from src.constants.messages import (
-    MESSAGE_DIALOG_TYPE_NOT_FOUND,
+    MESSAGE_ALREADY_EXISTS_USERNAME,
     MESSAGE_ERROR_APP,
     MESSAGE_ERROR_PYDANTIC,
+    MESSAGE_NOT_EXISTS_USER,
+    MESSAGE_NOT_FOUND_DIALOG_TYPE,
     MESSAGE_NOT_VALID_FIELDS,
     MESSAGE_NOT_VALID_MATCH_PASSWORD,
     MESSAGE_NOT_VALID_PASSWORD,
     MESSAGE_SUCCESS_LOGIN,
     MESSAGE_SUCCESS_REGISTER,
-    MESSAGE_USER_NOT_EXISTS,
-    MESSAGE_USERNAME_ALREADY_EXISTS,
 )
 
 
@@ -56,22 +56,22 @@ class TestMessages:
         assert len(MESSAGE_NOT_VALID_FIELDS) > 0
 
     def test_user_not_exists_is_string(self) -> None:
-        assert isinstance(MESSAGE_USER_NOT_EXISTS, str)
+        assert isinstance(MESSAGE_NOT_EXISTS_USER, str)
 
     def test_user_not_exists_is_not_empty(self) -> None:
-        assert len(MESSAGE_USER_NOT_EXISTS) > 0
+        assert len(MESSAGE_NOT_EXISTS_USER) > 0
 
     def test_username_already_exists_is_string(self) -> None:
-        assert isinstance(MESSAGE_USERNAME_ALREADY_EXISTS, str)
+        assert isinstance(MESSAGE_ALREADY_EXISTS_USERNAME, str)
 
     def test_username_already_exists_is_not_empty(self) -> None:
-        assert len(MESSAGE_USERNAME_ALREADY_EXISTS) > 0
+        assert len(MESSAGE_ALREADY_EXISTS_USERNAME) > 0
 
     def test_dialog_type_not_found_is_string(self) -> None:
-        assert isinstance(MESSAGE_DIALOG_TYPE_NOT_FOUND, str)
+        assert isinstance(MESSAGE_NOT_FOUND_DIALOG_TYPE, str)
 
     def test_dialog_type_not_found_is_not_empty(self) -> None:
-        assert len(MESSAGE_DIALOG_TYPE_NOT_FOUND) > 0
+        assert len(MESSAGE_NOT_FOUND_DIALOG_TYPE) > 0
 
     def test_all_messages_are_unique(self) -> None:
         all_messages: list[str] = [
@@ -82,8 +82,8 @@ class TestMessages:
             MESSAGE_NOT_VALID_PASSWORD,
             MESSAGE_NOT_VALID_MATCH_PASSWORD,
             MESSAGE_NOT_VALID_FIELDS,
-            MESSAGE_USER_NOT_EXISTS,
-            MESSAGE_USERNAME_ALREADY_EXISTS,
-            MESSAGE_DIALOG_TYPE_NOT_FOUND,
+            MESSAGE_NOT_EXISTS_USER,
+            MESSAGE_ALREADY_EXISTS_USERNAME,
+            MESSAGE_NOT_FOUND_DIALOG_TYPE,
         ]
         assert len(all_messages) == len(set(all_messages))

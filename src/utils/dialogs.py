@@ -1,7 +1,7 @@
 from tkinter import messagebox
 from typing import Any
 
-from src.constants.messages import MESSAGE_DIALOG_TYPE_NOT_FOUND, MESSAGE_ERROR_APP
+from src.constants.messages import MESSAGE_ERROR_APP, MESSAGE_NOT_FOUND_DIALOG_TYPE
 
 
 class BaseDialog:
@@ -42,7 +42,7 @@ class BaseDialog:
     def dialog(self):
         handler = self._HANDLERS.get(self.dialog_type)
         if handler is None:
-            messagebox.showerror(self.ERROR, MESSAGE_DIALOG_TYPE_NOT_FOUND)
+            messagebox.showerror(self.ERROR, MESSAGE_NOT_FOUND_DIALOG_TYPE)
             return None
         return handler(self.title, self.message)
 

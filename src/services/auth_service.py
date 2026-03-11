@@ -1,12 +1,12 @@
 from src.configs.logger_config import setup_logger
 from src.constants.messages import (
+    MESSAGE_ALREADY_EXISTS_USERNAME,
+    MESSAGE_NOT_EXISTS_USER,
     MESSAGE_NOT_VALID_FIELDS,
     MESSAGE_NOT_VALID_MATCH_PASSWORD,
     MESSAGE_NOT_VALID_PASSWORD,
     MESSAGE_SUCCESS_LOGIN,
     MESSAGE_SUCCESS_REGISTER,
-    MESSAGE_USER_NOT_EXISTS,
-    MESSAGE_USERNAME_ALREADY_EXISTS,
 )
 from src.data_access.user_dao import UserDAO
 from src.models.user_model import UserModel
@@ -26,7 +26,7 @@ class AuthService:
         user = UserDAO().get_by_username(username)
 
         if not user:
-            NotFoundDialogError(message=MESSAGE_USER_NOT_EXISTS).dialog()
+            NotFoundDialogError(message=MESSAGE_NOT_EXISTS_USER).dialog()
             return None
 
         if not HashService.verify(password, user.password):
@@ -47,7 +47,7 @@ class AuthService:
             return False
 
         if UserDAO().exists(username):
-            ConflictDialogError(message=MESSAGE_USERNAME_ALREADY_EXISTS).dialog()
+            ConflictDialogError(message=MESSAGE_ALREADY_EXISTS_USERNAME).dialog()
             return False
 
         user = UserModel(username=username, password=HashService.hash(password))

@@ -1,13 +1,13 @@
 from unittest.mock import MagicMock, patch
 
 from src.constants.messages import (
+    MESSAGE_ALREADY_EXISTS_USERNAME,
+    MESSAGE_NOT_EXISTS_USER,
     MESSAGE_NOT_VALID_FIELDS,
     MESSAGE_NOT_VALID_MATCH_PASSWORD,
     MESSAGE_NOT_VALID_PASSWORD,
     MESSAGE_SUCCESS_LOGIN,
     MESSAGE_SUCCESS_REGISTER,
-    MESSAGE_USER_NOT_EXISTS,
-    MESSAGE_USERNAME_ALREADY_EXISTS,
 )
 from src.models.user_model import UserModel
 from src.services.auth_service import AuthService
@@ -73,7 +73,7 @@ class TestAuthServiceLogin:
                 password=invalid_credentials["password"],
             )
 
-        mock_dialog_class.assert_called_once_with(message=MESSAGE_USER_NOT_EXISTS)
+        mock_dialog_class.assert_called_once_with(message=MESSAGE_NOT_EXISTS_USER)
         mock_dialog.dialog.assert_called_once()
 
     def test_returns_none_when_password_does_not_match(self, sample_user: UserModel, invalid_credentials: dict[str, str]) -> None:
@@ -227,7 +227,7 @@ class TestAuthServiceRegister:
                 confirm_password=registration_data["confirm_password"],
             )
 
-        mock_dialog_class.assert_called_once_with(message=MESSAGE_USERNAME_ALREADY_EXISTS)
+        mock_dialog_class.assert_called_once_with(message=MESSAGE_ALREADY_EXISTS_USERNAME)
         mock_dialog.dialog.assert_called_once()
 
     def test_returns_true_on_successful_register(self, registration_data: dict[str, str]) -> None:

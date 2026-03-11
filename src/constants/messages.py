@@ -14,10 +14,10 @@ MESSAGE_NOT_VALID_MATCH_PASSWORD = "Passwords are not the same."
 MESSAGE_NOT_VALID_FIELDS = "The fields entered are invalid."
 
 # ##### NOT_EXISTS #####
-MESSAGE_USER_NOT_EXISTS = "The entered username does not exist in our database."
+MESSAGE_NOT_EXISTS_USER = "The entered username does not exist in our database."
 
 # ##### ALREADY_EXISTS #####
-MESSAGE_USERNAME_ALREADY_EXISTS = "The username already exists."
+MESSAGE_ALREADY_EXISTS_USERNAME = "The username already exists."
 
 # ##### NOT_FOUND #####
-MESSAGE_DIALOG_TYPE_NOT_FOUND = "The type of dialog to display is not found."
+MESSAGE_NOT_FOUND_DIALOG_TYPE = "The type of dialog to display is not found."
