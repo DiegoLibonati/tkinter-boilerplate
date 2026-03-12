@@ -24,5 +24,6 @@ def handle_exceptions(fn: Callable[P, R]) -> Callable[P, R]:
         except ValidationError as _e:
             # logger.error("Validation error: %s", e)
             ValidationDialogError(message=MESSAGE_ERROR_PYDANTIC).dialog()
+            return
 
     return wrapper
