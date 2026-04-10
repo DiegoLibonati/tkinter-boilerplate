@@ -1,4 +1,4 @@
-# Template Tkinter Program
+# Tkinter Boilerplate
 
 ## Educational Purpose
 
@@ -64,7 +64,7 @@ pyinstaller==6.16.0
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/Template-Tkinter-Program`](https://www.diegolibonati.com.ar/#/project/Template-Tkinter-Program)
+[`https://www.diegolibonati.com.ar/#/project/tkinter-boilerplate`](https://www.diegolibonati.com.ar/#/project/tkinter-boilerplate)
 
 ## Testing
 
@@ -120,7 +120,7 @@ ENV_NAME=template_value
 ## Project Structure
 
 ```
-Template-Tkinter-Program/
+tkinter-boilerplate/
 ├── src/
 │   ├── configs/
 │   │   ├── __init__.py
