@@ -1,4 +1,4 @@
-# Tkinter Boilerplate
+# TkinterBoilerplate
 
 ## Educational Purpose
 
@@ -26,7 +26,19 @@ NOTE: Install **pre-commit** inside the repository folder.
 
 ## Description
 
-This is a personal boilerplate for building desktop applications with a graphical interface using Python and Tkinter.
+**TkinterBoilerplate** is a starting point for building desktop applications with a graphical interface using Python and Tkinter.
+
+**The problem it solves**: avoid repeating the same setup and architecture decisions every time a new desktop project is started. Instead of configuring linting, testing, logging, and project structure from scratch each time, this template has all of that already in place.
+
+**What it includes**:
+- Ruff for linting and formatting
+- pre-commit hooks for enforcing code quality before every commit
+- Pydantic v2 for data validation and modeling
+- Logging configured per environment (development, production, testing)
+- A hierarchy of custom exceptions with centralized error handling
+- pytest configured with coverage, env variables, and parallel execution
+
+**How to use it**: clone the repository, rename the package and its references to match your project, and replace the template logic (users, auth, sample views) with your own application logic.
 
 ## Technologies used
 
