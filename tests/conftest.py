@@ -7,7 +7,7 @@ from src.services.auth_service import AuthService
 from src.ui.styles import Styles
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session")
 def root() -> tk.Tk:
     instance: tk.Tk = tk.Tk()
     instance.withdraw()
